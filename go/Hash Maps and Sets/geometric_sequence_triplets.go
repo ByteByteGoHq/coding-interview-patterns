@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func GeometricSequenceTriplets(nums []int, r int) int {
+func geometricSequenceTriplets(nums []int, r int) int {
 	// Use 'map' to ensure the default value of 0 is returned when
 	// accessing a key that doesn’t exist in the hash map. This effectively sets
 	// the default frequency of all elements to 0.

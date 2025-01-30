@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func PairSumUnsorted(nums []int, target int) []int {
+func pairSumUnsorted(nums []int, target int) []int {
 	hashmap := make(map[int]int)
 	for i, x := range nums {
 		complement := target - x

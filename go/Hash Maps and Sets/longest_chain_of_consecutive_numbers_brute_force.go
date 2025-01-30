@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func LongestChainOfConsecutiveNumbersBruteForce(nums []int) int {
+func longestChainOfConsecutiveNumbersBruteForce(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}

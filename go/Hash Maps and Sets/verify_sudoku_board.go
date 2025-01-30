@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func VerifySudokuBoard(board [][]int) bool {
+func verifySudokuBoard(board [][]int) bool {
 	// Create hash sets for each row, column, and subgrid to keep
 	// track of numbers previously seen on any given row, column, or
 	// subgrid.

@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func LongestChainOfConsecutiveNumbers(nums []int) int {
+func longestChainOfConsecutiveNumbers(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}

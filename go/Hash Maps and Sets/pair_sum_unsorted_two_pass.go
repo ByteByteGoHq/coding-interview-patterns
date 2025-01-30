@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func PairSumUnsortedTwoPass(nums []int, target int) []int {
+func pairSumUnsortedTwoPass(nums []int, target int) []int {
 	numMap := make(map[int]int)
 	// First pass: Populate the hash map with each number and its index.
 	for i, num := range nums {

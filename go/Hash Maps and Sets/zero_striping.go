@@ -1,6 +1,4 @@
-package hashmapsandsets
-
-func ZeroStriping(matrix [][]int) {
+func zeroStriping(matrix [][]int) {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return
 	}
