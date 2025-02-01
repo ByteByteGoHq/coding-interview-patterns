@@ -1,13 +1,14 @@
-/* Definition of ListNode: */
-// class ListNode {
-//     val: number; 
-//     next: LLNode;
-//     constructor(val: number){
-//         this.val = val;
-//         this.next = null;
-//     }
-// }
-// type LLNode = ListNode | null;
+/* Definition of ListNode: 
+class ListNode {
+    val: number; 
+    next: LLNode;
+    constructor(val: number){
+        this.val = val;
+        this.next = null;
+    }
+}
+type LLNode = ListNode | null;
+*/
 
 function removeKthLastNode(head: LLNode, k: number): LLNode {
     // If k is less than or equal to 0, no node needs to be removed.

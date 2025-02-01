@@ -1,4 +1,4 @@
-// Definition of ListNode:
+/* Definition of ListNode:
 class ListNode {
     val: number; 
     next: LLNode;
@@ -8,6 +8,7 @@ class ListNode {
     }
 }
 type LLNode = ListNode | null;
+*/
 
 function linkedListReversal(head: LLNode): LLNode {
     let currNode: LLNode = head;
