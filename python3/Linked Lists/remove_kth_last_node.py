@@ -10,6 +10,9 @@ class ListNode:
 
 
 def remove_kth_last_node(head: ListNode, k: int) -> ListNode:
+    # If k is less than or equal to 0, no node needs to be removed.
+    if k <= 0:
+        return head
     # A dummy node to ensure there's a node before 'head' in case we 
     # need to remove the head node.
     dummy = ListNode(-1)
