@@ -28,9 +28,9 @@ function removeKthLastNode(head: LLNode, k: number): LLNode {
     // k nodes behind.
     while (leader.next !== null){
         leader = leader.next;
-        trailer = trailer.next;
+        trailer = trailer!.next;
     }
     // Remove the kth node from the end.
-    trailer.next = trailer.next.next;
+    trailer!.next = trailer!.next!.next;
     return dummy.next;
 }
