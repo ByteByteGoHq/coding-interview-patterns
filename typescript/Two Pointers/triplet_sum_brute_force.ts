@@ -16,5 +16,5 @@ function tripletSumBruteForce(nums: number[]): number[][] {
         }
     }
     // [javascript] convert the Set back into an array of triplets.
-    return Array.from(triplets).map(JSON.parse);
+    return Array.from(triplets).map((str) => JSON.parse(str));
 }
