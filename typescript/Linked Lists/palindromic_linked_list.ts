@@ -19,10 +19,10 @@ function palindromicLinkedList(head: LLNode): boolean {
     let ptr1 = head, ptr2 = secondHead;
     let res = true;
     while (ptr2) {
-        if (ptr1.val !== ptr2.val) {
+        if (ptr1!.val !== ptr2.val) {
             res = false;
         }
-        ptr1 = ptr1.next, ptr2 = ptr2.next;
+        ptr1 = ptr1!.next, ptr2 = ptr2.next;
     }
     return res;
 }
@@ -45,8 +45,8 @@ function findMiddle(head: LLNode): LLNode {
     let slow: LLNode = head;
     let fast: LLNode = head;
     while (fast && fast.next) {
-        slow = slow.next;
-        fast = fast.next.next;
+        slow = slow!.next;
+        fast = fast.next!.next;
     }
     return slow;
 }
