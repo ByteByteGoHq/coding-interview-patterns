@@ -11,9 +11,6 @@ type LLNode = ListNode | null;
 */
 
 function removeKthLastNode(head: LLNode, k: number): LLNode {
-    // If k is less than or equal to 0, no node needs to be removed.
-    if (k <= 0) 
-        return head;
     // A dummy node to ensure there's a node before 'head' in case we 
     // need to remove the head node.
     let dummy: LLNode = new ListNode(-1);
