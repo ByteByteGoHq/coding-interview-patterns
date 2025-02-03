@@ -1,23 +1,26 @@
-/* Definition of MultiLevelListNode:
-class MultieLevelListNode {
-    val: number; next: MLLNode; child: MLLNode;
+import { MultiLevelListNode } from "./ds";
+
+/* Definition of MultiLevelListNode: 
+class MultiLevelListNode {
+    val: number; 
+    next: MultiLevelListNode | null; 
+    child: MultiLevelListNode | null;
     constructor(val: number){
         this.val = val;
         this.next = null;
         this.child = null;
     }
-}
-type MLLNode = MultieLevelListNode | null;
-*/
+}*/
 
-function flattenMultiLevelList(head: MLLNode): MLLNode {
+
+function flattenMultiLevelList(head: MultiLevelListNode | null): MultiLevelListNode | null {
     if (!head) 
         return head;
-    let tail: MLLNode = head;
+    let tail: MultiLevelListNode | null = head;
     // Find the tail of the linked list at the first level.
     while (tail.next !== null)
         tail = tail.next;
-    let curr: MLLNode = head;
+    let curr: MultiLevelListNode | null = head;
     // Process each node at the current level. If a node has a child linked list,
     // append it to the tail and then update the tail to the end of the extended 
     // linked list. Continue until all nodes at the current level are processed.

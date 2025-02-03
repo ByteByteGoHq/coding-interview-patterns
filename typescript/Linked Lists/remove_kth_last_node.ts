@@ -1,21 +1,21 @@
-/* Definition of ListNode: 
+import { ListNode } from './ds';
+
+/* Definition of ListNode:
 class ListNode {
-    val: number; 
-    next: LLNode;
+    val: number; next: ListNode | null;
     constructor(val: number){
         this.val = val;
         this.next = null;
     }
-}
-type LLNode = ListNode | null;
-*/
+}*/
 
-function removeKthLastNode(head: LLNode, k: number): LLNode {
+function removeKthLastNode(head: ListNode | null, k: number): ListNode | null {
     // A dummy node to ensure there's a node before 'head' in case we 
     // need to remove the head node.
-    let dummy: LLNode = new ListNode(-1);
+    let dummy: ListNode | null = new ListNode(-1);
     dummy.next = head;
-    let trailer: LLNode = dummy, leader: LLNode = dummy;
+    let trailer: ListNode | null = dummy;
+    let leader: ListNode | null = dummy;
     // Advance 'leader' k steps ahead.  
     for (let i = 0; i < k; i++){
         leader = leader.next;

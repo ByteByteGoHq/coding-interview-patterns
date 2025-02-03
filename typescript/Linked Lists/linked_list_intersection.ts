@@ -1,29 +1,29 @@
+import { ListNode } from './ds';
+
 /* Definition of ListNode:
 class ListNode {
-    val: number; 
-    next: LLNode;
-    constructor(val: number, next: LLNode = null){
+    val: number; next: ListNode | null;
+    constructor(val: number){
         this.val = val;
-        this.next = next;
+        this.next = null;
     }
-}
-type LLNode = ListNode | null;
-*/
+}*/
 
-function linkedListIntersection(head_A: LLNode, head_B: LLNode): LLNode {
-    let ptr_A = head_A, ptr_B = head_B;
-    // Traverse through list A with 'ptr_A' and list B with 'ptr_B' 
+
+function linkedListIntersection(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+    let ptrA = headA, ptrB = headB;
+    // Traverse through list A with 'ptrA' and list B with 'ptrB' 
     // until they meet.
-    while (ptr_A !== ptr_B) {
-        // Traverse list A -> list B by first traversing 'ptr_A' and 
+    while (ptrA !== ptrB) {
+        // Traverse list A -> list B by first traversing 'ptrA' and 
         // then, upon reaching the end of list A, continue the 
         // traversal from the head of list B.
-        ptr_A = ptr_A !== null ? ptr_A.next : head_B;
+        ptrA = ptrA !== null ? ptrA.next : headB;
         // Simultaneously, traverse list B -> list A.
-        ptr_B = ptr_B !== null ? ptr_B.next : head_A;
+        ptrB = ptrB !== null ? ptrB.next : headA;
     }
-    // At this point, 'ptr_A' and 'ptr_B' either point to the 
+    // At this point, 'ptrA' and 'ptrB' either point to the 
     // intersection node or both are null if the lists do not 
     // intersect. Return either pointer.
-    return ptr_A;
+    return ptrA;
 }

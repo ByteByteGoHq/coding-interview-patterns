@@ -1,16 +1,15 @@
-/* Definition of ListNode: 
+import { ListNode } from './ds';
+
+/* Definition of ListNode:
 class ListNode {
-    val: number; 
-    next: LLNode;
+    val: number; next: ListNode | null;
     constructor(val: number){
         this.val = val;
         this.next = null;
     }
-}
-type LLNode = ListNode | null;
-*/
+}*/
 
-function palindromicLinkedList(head: LLNode): boolean {
+function palindromicLinkedList(head: ListNode | null): boolean {
     // Find the middle of the linked list and then reverse the second half of the
     // linked list starting at this midpoint.
     const mid = findMiddle(head);
@@ -28,9 +27,9 @@ function palindromicLinkedList(head: LLNode): boolean {
 }
 
 // From the 'Reverse Linked List' problem.
-function reverseList(head: LLNode): LLNode {
-    let prevNode: LLNode = null;
-    let currNode: LLNode = head;
+function reverseList(head: ListNode | null): ListNode | null {
+    let prevNode: ListNode | null = null;
+    let currNode: ListNode | null = head;
     while (currNode) {
         const nextNode = currNode.next;
         currNode.next = prevNode;
@@ -41,9 +40,9 @@ function reverseList(head: LLNode): LLNode {
 }
 
 // From the 'Linked List Midpoint' problem.
-function findMiddle(head: LLNode): LLNode {
-    let slow: LLNode = head;
-    let fast: LLNode = head;
+function findMiddle(head: ListNode | null): ListNode | null {
+    let slow: ListNode | null = head;
+    let fast: ListNode | null = head;
     while (fast && fast.next) {
         slow = slow!.next;
         fast = fast.next!.next;

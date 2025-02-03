@@ -1,22 +1,21 @@
+import { ListNode } from './ds';
+
 /* Definition of ListNode:
 class ListNode {
-    val: number; 
-    next: LLNode;
-    constructor(val: number, next: LLNode = null){
+    val: number; next: ListNode | null;
+    constructor(val: number){
         this.val = val;
-        this.next = next;
+        this.next = null;
     }
-}
-type LLNode = ListNode | null;
-*/
+}*/
 
-function linkedListReversal(head: LLNode): LLNode {
-    let currNode: LLNode = head;
-    let prevNode: LLNode = null;
+function linkedListReversal(head: ListNode | null): ListNode | null {
+    let currNode: ListNode | null = head;
+    let prevNode: ListNode | null = null;
     // Reverse the direction of each node's pointer until 'currNode' 
     // is null.
     while (currNode !== null){
-        const nextNode: LLNode = currNode.next;
+        const nextNode: ListNode | null = currNode.next;
         currNode.next = prevNode;
         prevNode = currNode;
         currNode = nextNode;
