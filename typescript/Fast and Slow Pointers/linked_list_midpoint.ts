@@ -1,15 +1,16 @@
-/* Definition of ListNode: 
+import { ListNode } from "./ds";
+
+/* Definition of ListNode:
 class ListNode {
     val: number; next: ListNode | null;
     constructor(val: number) {
         this.val = val;
         this.next = null;
     }
-}    
-*/
+}*/
 
 
-function linkedListMidpoint(head: ListNode): ListNode | null {
+function linkedListMidpoint(head: ListNode | null): ListNode | null {
     let slow: ListNode | null = head;
     let fast: ListNode | null = head;
     // When the fast pointer reaches the end of the list, the slow

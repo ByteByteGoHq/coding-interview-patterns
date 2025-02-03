@@ -1,14 +1,15 @@
-/* Definition of ListNode: 
+import { ListNode } from "./ds";
+
+/* Definition of ListNode:
 class ListNode {
     val: number; next: ListNode | null;
     constructor(val: number) {
         this.val = val;
         this.next = null;
     }
-}    
-*/
+}*/
 
-function linkedListLoop(head: ListNode): boolean {
+function linkedListLoop(head: ListNode | null): boolean {
     let slow: ListNode | null = head;
     let fast: ListNode | null = head;
     // Check both 'fast' and 'fast.next' to avoid null pointer

@@ -1,3 +1,5 @@
+import { ListNode } from "./ds";
+
 /* Definition of ListNode:
 class ListNode {
     val: number; next: ListNode | null;
@@ -5,10 +7,10 @@ class ListNode {
         this.val = val;
         this.next = null;
     }
-}    
-*/
+}*/
 
-function linkedListLoopNaive(head: ListNode): boolean {
+
+function linkedListLoopNaive(head: ListNode | null): boolean {
     const visited: Set<ListNode> = new Set();
     let curr: ListNode | null = head;
     while (curr !== null) {
