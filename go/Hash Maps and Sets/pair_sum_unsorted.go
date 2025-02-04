@@ -7,5 +7,5 @@ func pairSumUnsorted(nums []int, target int) []int {
 		}
 		hashmap[x] = i
 	}
-	return []int{}
+	return nil
 }
