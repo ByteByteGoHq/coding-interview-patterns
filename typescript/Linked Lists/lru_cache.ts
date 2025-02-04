@@ -1,6 +1,3 @@
-import { DoublyLinkedListNode } from './ds';
-
-/* Definition of DoublyLinkedListNode:
 class DoublyLinkedListNode {
     key: number; val: number; 
     prev: DoublyLinkedListNode | null; 
@@ -12,7 +9,7 @@ class DoublyLinkedListNode {
         this.prev = null;
         this.next = null;
     }
-}*/
+}
 
 class LRUCache {
     capacity: number;
