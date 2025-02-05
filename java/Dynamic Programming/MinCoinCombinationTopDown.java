@@ -2,12 +2,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MinCoinCombinationTopDown {
-    int max;
-
     public int minCoinCombinationTopDown(int[] coins, int target) {
-        max = target + 1;
         int res = topDownDp(coins, target, new HashMap<>());
-        return res == max ? -1 : res;
+        return res == Integer.MAX_VALUE ? -1 : res;
     }
 
     private int topDownDp(int[] coins, int target, Map<Integer, Integer> memo) {
@@ -20,13 +17,16 @@ public class MinCoinCombinationTopDown {
             return memo.get(target);
         }
         // Initialize 'minCoins' to a large number.
-        int minCoins = max;
+        int minCoins = Integer.MAX_VALUE;
         for (int coin : coins) {
             // Avoid negative targets.
             if (coin <= target) {
                 // Calculate the minimum number of coins needed if we use
                 // the current coin.
-                minCoins = Math.min(minCoins, 1 + topDownDp(coins, target - coin, memo));
+                int result = topDownDp(coins, target - coin, memo);
+                if (result!= Integer.MAX_VALUE) {
+                    minCoins = Math.min(minCoins, 1 + result);
+                }
             }
         }
         memo.put(target, minCoins);
