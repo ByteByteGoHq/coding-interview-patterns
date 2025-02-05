@@ -38,7 +38,7 @@ public class ShortestTransformationSequence {
                     for (char c : lowerCaseAlphabet.toCharArray()) {
                         currWordArray[i] = c;
                         String nextWord = new String(currWordArray);
-                        // If 'next_word' exists in the dictionary, it's a 
+                        // If 'nextWord' exists in the dictionary, it's a 
                         // neighbor of the current word. If unvisited, add it
                         // to the queue to be processed in the next level.
                         if (dictionarySet.contains(nextWord) && !visited.contains(nextWord)) {
