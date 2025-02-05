@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class UnionFind {
+class UnionFind {
     int[] parent;
     int[] size;
 
@@ -16,16 +16,18 @@ public class UnionFind {
     public void union(int x, int y) {
         int repX = find(x);
         int repY = find(y);
-        // If 'repX' represents a larger community, connect
-        // 'repY 's community to it.
-        if (this.size[repX] > this.size[repY]) {
-            this.parent[repY] = repX;
-            this.size[repX] += this.size[repY];
-        }
-        // Otherwise, connect 'rep_x's community to 'rep_y'.
-        else {
-            this.parent[repX] = repY;
-            this.size[repY] += this.size[repX];
+        if (repX != repY) {
+            // If 'repX' represents a larger community, connect
+            // 'repY 's community to it.
+            if (this.size[repX] > this.size[repY]) {
+                this.parent[repY] = repX;
+                this.size[repX] += this.size[repY];
+            }
+            // Otherwise, connect 'rep_x's community to 'rep_y'.
+            else {
+                this.parent[repX] = repY;
+                this.size[repY] += this.size[repX];
+            }
         }
     }
 
