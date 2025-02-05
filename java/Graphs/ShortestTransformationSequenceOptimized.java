@@ -1,7 +1,7 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 public class ShortestTransformationSequenceOptimized {
@@ -13,9 +13,9 @@ public class ShortestTransformationSequenceOptimized {
         if (start == end) {
             return 1;
         }
-        Deque<String> startQueue = new ArrayDeque<>();
+        Queue<String> startQueue = new LinkedList<>();
         Set<String> startVisited = new HashSet<>();
-        Deque<String> endQueue = new ArrayDeque<>();
+        Queue<String> endQueue =  new LinkedList<>();
         Set<String> endVisited = new HashSet<>();
         startQueue.offer(start);
         startVisited.add(start);
@@ -46,7 +46,7 @@ public class ShortestTransformationSequenceOptimized {
 
     // This function explores the next level in the level-order traversal 
     // and checks if two searches meet.
-    private boolean exploreLevel(Deque<String> queue, Set<String> visited, Set<String> otherVisited, Set<String> dictionarySet) {
+    private boolean exploreLevel(Queue<String> queue, Set<String> visited, Set<String> otherVisited, Set<String> dictionarySet) {
         String lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
         int size = queue.size();
         for (int j = 0; j < size; j++) {

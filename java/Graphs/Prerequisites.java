@@ -1,6 +1,6 @@
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -18,7 +18,7 @@ public class Prerequisites {
             graph.get(prerequisite).add(course);
             inDegrees[course]++;
         }
-        Queue<Integer> queue = new ArrayDeque<>();
+        Queue<Integer> queue = new LinkedList<>();
         // Add all courses with an in-degree of 0 to the queue.
         for (int i = 0; i < n; i++) {
             if (inDegrees[i] == 0) {

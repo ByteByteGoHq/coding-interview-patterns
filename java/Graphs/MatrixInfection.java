@@ -1,10 +1,10 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class MatrixInfection {
     public int matrixInfection(int[][] matrix) {
         int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-        Deque<int[]> queue = new ArrayDeque<>();
+        Queue<int[]> queue = new LinkedList<>();
         int ones, seconds;
         ones = seconds = 0;
         // Count the total number of uninfected cells and add each infected 

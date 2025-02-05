@@ -1,7 +1,7 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 public class ShortestTransformationSequence {
@@ -14,7 +14,7 @@ public class ShortestTransformationSequence {
             return 1;
         }
         String lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
-        Deque<String> queue = new ArrayDeque<>();
+        Queue<String> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
         queue.offer(start);
         visited.add(start);
