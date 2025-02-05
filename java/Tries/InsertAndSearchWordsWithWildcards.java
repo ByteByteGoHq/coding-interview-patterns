@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class TrieNode {
+class TrieNode {
     Map<Character, TrieNode> children;
     boolean isWord;
     public TrieNode() {
