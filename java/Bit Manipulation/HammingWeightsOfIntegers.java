@@ -1,10 +1,8 @@
-import java.util.Arrays;
-
 public class HammingWeightsOfIntegers {
-    public hammingWeightsOfIntegers(int n) {
+    public int[] hammingWeightsOfIntegers(int n) {
         int[] res = new int[n + 1];
-        for (int i = 0; i < n + 1; i++) {
-            res[i] = countSetBits(i);
+        for (int x = 0; x < n + 1; x++) {
+            res[x] = countSetBits(x);
         }
         return res;
     }
