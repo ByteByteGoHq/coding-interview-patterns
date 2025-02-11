@@ -1,4 +1,4 @@
-public partial class Solution 
+public class Solution 
 {
     public int[] PairSumSorted(int[] nums, int target) 
     {
