@@ -19,12 +19,12 @@ pub fn phone_keypad_combinations(digits: String) -> Vec<String> {
     let mut curr_combination: Vec<char> = Vec::new();
     
     let digits_chars: Vec<char> = digits.chars().collect();
-    phone_keypad_combinations_impl(0, &mut curr_combination, &digits_chars, &keypad_map, &mut result);
+    backtrack(0, &mut curr_combination, &digits_chars, &keypad_map, &mut result);
     
     result
 }
 
-fn phone_keypad_combinations_impl(
+fn backtrack(
     i: usize,
     curr_combination: &mut Vec<char>,
     digits: &Vec<char>,
@@ -45,7 +45,7 @@ fn phone_keypad_combinations_impl(
             curr_combination.push(letter);
             
             // Recursively explore all paths that branch from this combination.
-            phone_keypad_combinations_impl(i + 1, curr_combination, digits, keypad_map, result);
+            backtrack(i + 1, curr_combination, digits, keypad_map, result);
             
             // Backtrack by removing the letter we just added.
             curr_combination.pop();

@@ -3,12 +3,12 @@ pub fn find_all_permutations(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut candidate: Vec<i32> = Vec::new();
     let mut used: std::collections::HashSet<i32> = std::collections::HashSet::new();
     
-    find_all_permutations_impl(&nums, &mut candidate, &mut used, &mut result);
+    dfs(&nums, &mut candidate, &mut used, &mut result);
     
     result
 }
 
-fn find_all_permutations_impl(
+fn dfs(
     nums: &Vec<i32>,
     candidate: &mut Vec<i32>,
     used: &mut std::collections::HashSet<i32>,
@@ -27,7 +27,7 @@ fn find_all_permutations_impl(
             used.insert(num);
             
             // Recursively explore all branches using the updated permutation candidate.
-            find_all_permutations_impl(nums, candidate, used, result);
+            dfs(nums, candidate, used, result);
             
             // Backtrack by reversing the changes made.
             candidate.pop();

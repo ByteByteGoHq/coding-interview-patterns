@@ -4,12 +4,12 @@ pub fn n_queens(n: i32) -> i32 {
     let mut anti_diagonals_set = std::collections::HashSet::new();
     let mut cols_set = std::collections::HashSet::new();
     
-    n_queens_impl(0, &mut diagonals_set, &mut anti_diagonals_set, &mut cols_set, n, &mut result);
+    dfs(0, &mut diagonals_set, &mut anti_diagonals_set, &mut cols_set, n, &mut result);
     
     result
 }
 
-fn n_queens_impl(
+fn dfs(
     r: i32, 
     diagonals_set: &mut std::collections::HashSet<i32>, 
     anti_diagonals_set: &mut std::collections::HashSet<i32>, 
@@ -43,7 +43,7 @@ fn n_queens_impl(
         anti_diagonals_set.insert(curr_anti_diagonal);
         
         // Recursively move to the next row to continue placing queens.
-        n_queens_impl(r + 1, diagonals_set, anti_diagonals_set, cols_set, n, result);
+        dfs(r + 1, diagonals_set, anti_diagonals_set, cols_set, n, result);
         
         // Backtrack by removing the current column, diagonal, and
         // anti-diagonal from the hash sets.
