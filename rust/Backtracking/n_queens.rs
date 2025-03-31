@@ -1,12 +1,12 @@
 pub fn n_queens(n: i32) -> i32 {
-    let mut result = 0;
+    let mut res = 0;
     let mut diagonals_set = std::collections::HashSet::new();
     let mut anti_diagonals_set = std::collections::HashSet::new();
     let mut cols_set = std::collections::HashSet::new();
     
-    dfs(0, &mut diagonals_set, &mut anti_diagonals_set, &mut cols_set, n, &mut result);
+    dfs(0, &mut diagonals_set, &mut anti_diagonals_set, &mut cols_set, n, &mut res);
     
-    result
+    res
 }
 
 fn dfs(
@@ -15,12 +15,12 @@ fn dfs(
     anti_diagonals_set: &mut std::collections::HashSet<i32>, 
     cols_set: &mut std::collections::HashSet<i32>, 
     n: i32,
-    result: &mut i32
+    res: &mut i32
 ) {
     // Termination condition: If we have reached the end of the rows,
     // we've placed all 'n' queens.
     if r == n {
-        *result += 1;
+        *res += 1;
         return;
     }
     
@@ -43,7 +43,7 @@ fn dfs(
         anti_diagonals_set.insert(curr_anti_diagonal);
         
         // Recursively move to the next row to continue placing queens.
-        dfs(r + 1, diagonals_set, anti_diagonals_set, cols_set, n, result);
+        dfs(r + 1, diagonals_set, anti_diagonals_set, cols_set, n, res);
         
         // Backtrack by removing the current column, diagonal, and
         // anti-diagonal from the hash sets.

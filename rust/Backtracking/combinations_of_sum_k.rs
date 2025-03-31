@@ -1,10 +1,10 @@
 pub fn combinations_of_sum_k(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    let mut result: Vec<Vec<i32>> = Vec::new();
+    let mut res: Vec<Vec<i32>> = Vec::new();
     let mut combination: Vec<i32> = Vec::new();
     
-    dfs(&mut combination, 0, &nums, target, &mut result);
+    dfs(&mut combination, 0, &nums, target, &mut res);
     
-    result
+    res
 }
 
 fn dfs(
@@ -12,12 +12,12 @@ fn dfs(
     start_index: usize,
     nums: &Vec<i32>,
     target: i32,
-    result: &mut Vec<Vec<i32>>
+    res: &mut Vec<Vec<i32>>
 ) {
     // Termination condition: If the target is equal to 0, we found a combination 
     // that sums to 'k'.
     if target == 0 {
-        result.push(combination.clone());
+        res.push(combination.clone());
         return;
     }
     
@@ -33,7 +33,7 @@ fn dfs(
         combination.push(nums[i]);
         
         // Recursively explore all paths that branch from this new combination.
-        dfs(combination, i, nums, target - nums[i], result);
+        dfs(combination, i, nums, target - nums[i], res);
         
         // Backtrack by removing the number we just added.
         combination.pop();

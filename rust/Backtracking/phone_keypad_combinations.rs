@@ -15,13 +15,13 @@ pub fn phone_keypad_combinations(digits: String) -> Vec<String> {
     keypad_map.insert('8', "tuv");
     keypad_map.insert('9', "wxyz");
     
-    let mut result: Vec<String> = Vec::new();
+    let mut res: Vec<String> = Vec::new();
     let mut curr_combination: Vec<char> = Vec::new();
     
     let digits_chars: Vec<char> = digits.chars().collect();
-    backtrack(0, &mut curr_combination, &digits_chars, &keypad_map, &mut result);
+    backtrack(0, &mut curr_combination, &digits_chars, &keypad_map, &mut res);
     
-    result
+    res
 }
 
 fn backtrack(
@@ -29,12 +29,12 @@ fn backtrack(
     curr_combination: &mut Vec<char>,
     digits: &Vec<char>,
     keypad_map: &HashMap<char, &str>,
-    result: &mut Vec<String>
+    res: &mut Vec<String>
 ) {
     // Termination condition: if all digits have been considered, add the
     // current combination to the output list.
     if curr_combination.len() == digits.len() {
-        result.push(curr_combination.iter().collect());
+        res.push(curr_combination.iter().collect());
         return;
     }
     
@@ -45,7 +45,7 @@ fn backtrack(
             curr_combination.push(letter);
             
             // Recursively explore all paths that branch from this combination.
-            backtrack(i + 1, curr_combination, digits, keypad_map, result);
+            backtrack(i + 1, curr_combination, digits, keypad_map, res);
             
             // Backtrack by removing the letter we just added.
             curr_combination.pop();
