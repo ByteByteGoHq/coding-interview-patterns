@@ -4,7 +4,7 @@ from typing import List
 def largest_container(heights: List[int]) -> int:
     max_water = 0
     left, right = 0, len(heights) - 1
-    while (left < right):
+    while left < right:
         # Calculate the water contained between the current pair of 
         # lines.
         water = min(heights[left], heights[right]) * (right - left)
