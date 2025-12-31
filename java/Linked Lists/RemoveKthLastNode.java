@@ -21,7 +21,7 @@ public class RemoveKthLastNode {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
         ListNode trailer = dummy;
-        ListNode leader = head;
+        ListNode leader = dummy;
         // Advance 'leader' k steps ahead.
         for (int i = 0; i < k; i++) {
             leader = leader.next;
