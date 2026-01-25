@@ -7,7 +7,7 @@ import java.util.Set;
 public class ShortestTransformationSequence {
     public int shortestTransformationSequence(String start, String end, List<String> dictionary) {
         Set<String> dictionarySet  = new HashSet<>(dictionary);
-        if (!dictionarySet.contains(start) && !dictionarySet.contains(end)) {
+        if (!dictionarySet.contains(start) || !dictionarySet.contains(end)) {
             return 0;
         }
         if (start == end) {
